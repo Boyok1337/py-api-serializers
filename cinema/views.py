@@ -13,7 +13,9 @@ from cinema.serializers import (
     MovieSerializer,
     MovieListSerializer,
     MovieSessionSerializer,
-    MovieSessionListSerializer, MovieDetailSerializer, MovieSessionRetrieveSerializer
+    MovieSessionListSerializer,
+    MovieDetailSerializer,
+    MovieSessionRetrieveSerializer
 )
 
 
@@ -72,4 +74,3 @@ class MovieSessionViewSet(viewsets.ModelViewSet):
             return MovieSessionRetrieveSerializer
 
         return MovieSessionSerializer
-
