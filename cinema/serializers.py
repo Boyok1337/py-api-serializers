@@ -24,7 +24,6 @@ class ActorSerializer(serializers.ModelSerializer):
             "full_name"
         )
 
-    @staticmethod
     def get_full_name(obj):
         return f"{obj.first_name} {obj.last_name}"
 
@@ -32,7 +31,6 @@ class ActorSerializer(serializers.ModelSerializer):
 class CinemaHallSerializer(serializers.ModelSerializer):
     capacity = serializers.SerializerMethodField()
 
-    @staticmethod
     def get_capacity(obj):
         return obj.capacity
 
@@ -68,7 +66,6 @@ class MovieListSerializer(MovieSerializer):
     )
     actors = serializers.SerializerMethodField()
 
-    @staticmethod
     def get_actors(obj):
         return [str(actor) for actor in obj.actors.all()]
 
